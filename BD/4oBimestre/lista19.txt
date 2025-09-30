@@ -1,0 +1,168 @@
+### Exercício 1: Consulta para listar os clientes ativos e seus respectivos limites de crédito
+
+**Passos:**
+
+1. **Abra o Access** e a base de dados que contém as tabelas `Clientes`, `Produtos` e `Setores`.
+2. **Vá até a aba "Criar"** e clique em "Design de Consulta".
+3. Selecione a tabela `Clientes` e clique em "Adicionar".
+4. Feche a janela de seleção de tabelas.
+5. Arraste os seguintes campos da tabela `Clientes` para a grade da consulta:
+    - `Nome`
+    - `LimiteCredi` (Limite de Crédito)
+    - `Ativo`
+6. No campo "Ativo", defina o critério para `True` (ou Verdadeiro), para filtrar apenas os clientes ativos.
+    - **No design da consulta**, localize a linha correspondente ao campo **Ativo** na grade da consulta.
+    - Na linha chamada **"Critério"** abaixo do campo **Ativo**, insira o valor **Verdadeiro**. Isso indica que queremos apenas os clientes cuja coluna "Ativo" está marcada como **Sim**.
+7. Execute a consulta clicando em "Executar" (ícone do ponto de exclamação vermelho).
+8. Salve a consulta com o nome **Clientes Ativos e Limites de Crédito**.
+9. Feche a consulta desmarque algumas seleções do campo Ativo na tabela Clientes, salve a tabela e abra novamente a consulta. Veja se ouve mudança.
+
+
+
+
+### Exercício 2: Consulta para listar produtos com estoque abaixo do mínimo
+
+**Passos:**
+
+1. **Vá até a aba "Criar"** e clique em "Design de Consulta".
+2. Selecione a tabela `Produtos` e clique em "Adicionar".
+3. Feche a janela de seleção de tabelas.
+4. Arraste os seguintes campos da tabela `Produtos` para a grade da consulta:
+    - `Descricao` (Descrição)
+    - `Unitario` (Preço Unitário)
+    - `Minimo` (Quantidade Mínima)
+5. No campo `Minimo`, insira o critério `< (Escolha um valor)`, o que significa listar apenas os produtos cujo estoque está abaixo do valor escolhido. (escolha uma valor adequando, para isso veja os valores na tabela `Produtos` )
+6. Execute a consulta clicando em "Executar".
+7. Salve a consulta com o nome **Produtos Abaixo do Estoque Mínimo**.
+
+
+### Exercício 3: Consulta para listar clientes por estado com o total de limite de crédito
+
+**Passos:**
+
+1. **Vá até a aba "Criar"** e clique em "Design de Consulta".
+2. Selecione a tabela `Clientes` e clique em "Adicionar".
+3. Feche a janela de seleção de tabelas.
+4. Arraste os seguintes campos da tabela `Clientes` para a grade da consulta:
+    - `Estado`
+    - `LimiteCredi`
+5. Na barra de ferramentas da consulta, clique no ícone "Totais" (parece um símbolo de somatório, ∑ ).
+6. No campo `LimiteCredi`, altere a linha "Total" para `Soma`, para somar o limite de crédito por estado.
+7. Execute a consulta clicando em "Executar".
+8. Salve a consulta com o nome **Total de Limite de Crédito por Estado**.
+
+# Lista 19
+
+Nome: Enzo Seiichi Yamakawa
+
+Turma: 1°Y
+
+Arquivo com as Tabelas Clientes, Produtos e Setores:
+
+[Aula19.accdb](https://prod-files-secure.s3.us-west-2.amazonaws.com/f57aab38-c7ad-4b4a-a482-775bcf20b004/e17bd6e9-2c43-48e7-8032-376518c3bea3/Aula19.accdb)
+
+---
+
+### Exercício 1: Consulta para listar os clientes ativos e seus respectivos limites de crédito
+
+**Passos:**
+
+1. **Abra o Access** e a base de dados que contém as tabelas `Clientes`, `Produtos` e `Setores`.
+2. **Vá até a aba "Criar"** e clique em "Design de Consulta".
+3. Selecione a tabela `Clientes` e clique em "Adicionar".
+4. Feche a janela de seleção de tabelas.
+5. Arraste os seguintes campos da tabela `Clientes` para a grade da consulta:
+    - `Nome`
+    - `LimiteCredi` (Limite de Crédito)
+    - `Ativo`
+6. No campo "Ativo", defina o critério para `True` (ou Verdadeiro), para filtrar apenas os clientes ativos.
+    - **No design da consulta**, localize a linha correspondente ao campo **Ativo** na grade da consulta.
+    - Na linha chamada **"Critério"** abaixo do campo **Ativo**, insira o valor **Verdadeiro**. Isso indica que queremos apenas os clientes cuja coluna "Ativo" está marcada como **Sim**.
+7. Execute a consulta clicando em "Executar" (ícone do ponto de exclamação vermelho).
+8. Salve a consulta com o nome **Clientes Ativos e Limites de Crédito**.
+9. Feche a consulta desmarque algumas seleções do campo Ativo na tabela Clientes, salve a tabela e abra novamente a consulta. Veja se ouve mudança.
+
+Resposta: (Consulta no modo Design e Executar)
+
+![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f57aab38-c7ad-4b4a-a482-775bcf20b004/7a84f70f-7d00-4f8b-a2a2-79135532182b/image.png)
+
+![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f57aab38-c7ad-4b4a-a482-775bcf20b004/2112b10e-31bd-41f0-86e8-334719656444/image.png)
+
+---
+
+### Exercício 2: Consulta para listar produtos com estoque abaixo do mínimo
+
+**Passos:**
+
+1. **Vá até a aba "Criar"** e clique em "Design de Consulta".
+2. Selecione a tabela `Produtos` e clique em "Adicionar".
+3. Feche a janela de seleção de tabelas.
+4. Arraste os seguintes campos da tabela `Produtos` para a grade da consulta:
+    - `Descricao` (Descrição)
+    - `Unitario` (Preço Unitário)
+    - `Minimo` (Quantidade Mínima)
+5. No campo `Minimo`, insira o critério `< (Escolha um valor)`, o que significa listar apenas os produtos cujo estoque está abaixo do valor escolhido. (escolha uma valor adequando, para isso veja os valores na tabela `Produtos` )
+6. Execute a consulta clicando em "Executar".
+7. Salve a consulta com o nome **Produtos Abaixo do Estoque Mínimo**.
+
+Resposta: (Consulta no modo Design e Executar)
+
+![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f57aab38-c7ad-4b4a-a482-775bcf20b004/d4d80b3f-b952-4766-88af-0a51feae6e78/image.png)
+
+![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f57aab38-c7ad-4b4a-a482-775bcf20b004/09b34739-b942-4445-b9f6-27115e42e7d7/image.png)
+
+---
+
+### Exercício 3: Consulta para listar clientes por estado com o total de limite de crédito
+
+**Passos:**
+
+1. **Vá até a aba "Criar"** e clique em "Design de Consulta".
+2. Selecione a tabela `Clientes` e clique em "Adicionar".
+3. Feche a janela de seleção de tabelas.
+4. Arraste os seguintes campos da tabela `Clientes` para a grade da consulta:
+    - `Estado`
+    - `LimiteCredi`
+5. Na barra de ferramentas da consulta, clique no ícone "Totais" (parece um símbolo de somatório, ∑ ).
+6. No campo `LimiteCredi`, altere a linha "Total" para `Soma`, para somar o limite de crédito por estado.
+7. Execute a consulta clicando em "Executar".
+8. Salve a consulta com o nome **Total de Limite de Crédito por Estado**.
+
+Resposta: (Consulta no modo Design e Executar)
+
+
+### Exercício 4: Consulta para listar produtos ativos por setor
+
+**Passos:**
+
+1. **Vá até a aba "Criar"** e clique em "Design de Consulta".
+2. Selecione as tabelas `Produtos` e `Setores`, e clique em "Adicionar".
+3. Feche a janela de seleção de tabelas.
+4. Arraste os seguintes campos da tabela `Produtos` para a grade da consulta:
+    - `Descricao` (Descrição do Produto)
+    - `Unitario` (Preço Unitário)
+    - `Ativo`
+    - `IdSetor` (para fazer a ligação com a tabela `Setores`)
+5. Arraste o campo `Descricao` da tabela `Setores` para a grade da consulta (este campo representará o nome do setor).
+6. No campo `Ativo`, insira o critério Verdadeiro, para listar apenas os produtos ativos.
+7. Execute a consulta clicando em "Executar".
+8. Salve a consulta com o nome **Produtos Ativos por Setor**.
+
+
+### Exercício 5: Consulta para listar clientes e produtos que pertencem ao setor de alimentos
+
+**Passos:**
+
+1. **Vá até a aba "Criar"** e clique em "Design de Consulta".
+2. Selecione as tabelas `Clientes`, `Produtos` e `Setores`, e clique em "Adicionar".
+3. Feche a janela de seleção de tabelas.
+4. Arraste os seguintes campos da tabela `Clientes` para a grade da consulta:
+    - `Nome`
+5. Arraste os seguintes campos da tabela `Produtos`:
+    - `Descricao` (Descrição do Produto)
+6. Arraste o campo `Descricao` da tabela `Setores`.
+7. No campo `Descricao` da tabela `Setores`, insira o critério `"Alimentos"`, para filtrar apenas os produtos que pertencem ao setor de alimentos.
+8. Execute a consulta clicando em "Executar".
+9. Salve a consulta com o nome **Clientes e Produtos do Setor de Alimentos**.
+
+

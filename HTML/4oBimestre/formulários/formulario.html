@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h3{
+            font-size: 20px;
+            font-weight: 10px;
+        }
+        body{
+            background-color: whitesmoke;
+        }
+        form{
+            border: 5px solid rgb(17, 202, 63);
+            border-radius: 1em; 
+            /*padding define a distância entre o conteúdo de um elemento e suas bordas*/
+            padding: 1em;
+            /*centralizar o formulário na página*/
+            margin: 0 auto;
+            width: 400px;
+            background-color: pink;
+        }
+        h1{
+            text-align: center;
+        }
+        form input{
+            padding: 10px;
+            margin: 10px 0;
+        }
+        form button{
+            padding: 10px;
+            margin: 10px 0;
+        }
+        label{
+            font-size: 20px;
+            /*Para garantir que todos os rótulos tenham o mesmo tamanho e estejam devidamente alinhados*/
+            width: 90px;
+            
+        }
+        input,textarea{
+            background-color: paleturquoise;
+        }
+        
+    </style>
+</head>
+<body>
+    <form>
+        <h1>Entre em contato</h1>
+        <label for="nome">Nome: </label> 
+        <input type="text" id="nome" size="40" placeholder="fulano de tal" required="required"><br>
+        
+        <label for="fone">&nbspFone: </label><!--&nbsp significa espaço-->
+        <input type="tel" id="foneid" placeholder="(xx)xxxxx-xxx" name="fone"><br>
+        <!-- dica que descreve o valor esperado em um dado campo de entrada-->
+        <label for="email">Email: </label>
+        <input type="text" name="email" id="emailid" placeholder="fulano@email.com"><br>
+        <label for="mensagem">Mensagem: </label>
+        <textarea name="mensagem" id="mensagemid" cols="50" rows="10"></textarea><br>
+        <label for="senha">Senha: </label>
+        <input type="password" name="senhaid" id="25" maxlength="16"><br><br>
+        
+        <label>Como prefere o nosso contato?</label>   
+        <br>
+        <input type="radio" name="resp">
+        <label for="email">Email</label>
+        <input type="radio" name="resp">
+        <label for="telefone">Telefone</label>
+        <input type="radio" name="resp">
+        <label for="whatsaap">WhatsApp</label>
+        <br><br>
+
+        <label>Quais são suas áreas de interesse?</label><br>
+        <input type="checkbox" name="areap" id="areap1"/>
+        <label for="areap1">Administração</label>
+        <input type="checkbox" name="areap" value="2" id="areap2"/>
+        <label for="areap2">Educação</label>
+        <input type="checkbox" name="areap" value="3" id="areap3" checked="checked">
+        <label for="areap3">Informática</label>
+        <br><br>
+        
+        <label for="estado">selecione seu estado: </label><br>
+        <select name="estado" id="estadoid">]
+            <option value="SP">SP</option>
+            <option value="MG">MG</option>
+            <option value="RJ">RJ</option>
+            <option value="AC">AC</option>
+        </select>
+        <br>
+        <h3>qual horario deseja trabalhar?</h3>
+        <select name="horario" id="">
+            <option value="manhã" selected="selected">Manhã</option>
+            <option value="tarde">Tarde</option>
+            <option value="noite">Noite</option>
+        </select>
+        <br><br>
+
+        <button type="submit" value="Enviar">Enviar</button>
+        <button type="reset" value="Limpar">Limpar</button>
+        <button type="button" value="Sem ação">Sem ação</button>
+    </form>
+</body>
+</html>

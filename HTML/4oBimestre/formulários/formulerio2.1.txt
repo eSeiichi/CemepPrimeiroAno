@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: white;
+            font-size: 25px;
+        }
+        form{
+            border: 5px solid purple;
+            border-radius: 1em; 
+            /*padding define a distância entre o conteúdo de um elemento e suas bordas*/
+            padding: 1em;
+            /*centralizar o formulário na página*/
+            margin: 0 auto;
+            width: 60%;
+            background-color: whitesmoke;
+        }
+        button{
+            width: 50%;
+        }
+        .formulario{
+            display: flex;
+            flex-direction: column;
+        }
+        .titulo{
+            display: flex;
+            float: left;
+            font-size: 50px;
+        }
+        .cima{
+            display: flex;
+            align-items: center;
+        }
+        .baixo{
+            display: flex;
+            align-items: flex-end;
+        }
+        .direita{
+            display: inline;
+            float: right;
+            width: 50%;
+        }
+        .esquerda{
+            display: inline;
+            float: left;
+            width: 50%;
+        }
+        #dados{
+            display: inline;
+            float: left;
+
+        }
+        #botao{
+            display: flex;
+            align-items: center;
+        }
+
+    </style>
+</head>
+<body>
+    <form action="">
+        <div class="formulario">
+            <div id="titulo">
+                <h1>Cadastro</h1>
+            </div>
+            <div class="cima">
+                <div class="esquerda">
+                    <label for="email" id="idemail">E-Mail</label>
+                    <input type="text" name="emailid" id="idemail" required="required"><br>
+
+                    <label for="email2" id="idemail2">Repetir e-mail</label>
+                    <input type="text" name="email2id" id="idemail2" required="required"><br>
+                </div>
+                <div class="direita">
+                    <label for="senha" id="idsenha">Crie uma senha</label>
+                    <input type="text" name="senhaid" id="idsenha" required="required"><br>
+
+                    <label for="senha2" id="idsenha2">Repetir a senha</label>
+                    <input type="text" name="senha2" id="idsenha2" required="required"><br>
+                </div>
+            </div>
+            <div id="dados">
+                <h1>Dados</h1>
+            </div>
+            <div class="baixo">
+                <div class="esquerda">
+                    <input type="radio" name="pessoaid" id="idpessoa" required="required" checked="checked">
+                    <label for="pessoa" id="idpessoa">CPF</label>
+                    <input type="radio" name="pessoaid" id="idpessoa" required="required">
+                    <label for="pessoa2" id="idpessoa2">CNPJ</label>
+                    <br>
+                    
+                    <label for="nome" id="idnome">Nome</label>
+                    <input type="text" name="nome" id="idnome" required="required"><br>
+
+                    <label for="sobrenome" id="idsobrenome">Sobrenome</label>
+                    <input type="text" name="sobrenome" id="idsobrenome" required="required"><br>
+                    
+                    <label for="sexo" id="idsexo">Sexo</label>
+                        <select nome="sexo" id="idsexo">
+                            <option value="masculino">Masculino</option>
+                            <option value="feminino">Feminino</option>
+                            <option value="outros">Outros</option>
+                        </select>
+                    <br>
+
+                    <label for="cpf" id="idcpf">CPF</label>
+                    <input type="text" name="cpf" id="idcpf" required="required"><br>
+
+                    <label for="telefone" id="idtelefone">Telefone</label>
+                    <input type="text" name="telefone" id="idtelefone" required="required"><br>
+
+                    <label for="celular" id="idcelular">Celular</label>
+                    <input type="text" name="celular" id="idcelular"><br>
+
+                    <label for="nascimento" id="idnascimento">Nascimento</label>
+                    <input type="text" name="nascimento" id="idnascimento" required="required"><br>
+
+                    <input type="checkbox" name="=ofertas" id="idofertas">
+                    <label for="ofertas" id="idofertas">Receber ofertas e novidades por e-mail</label>
+                </div>
+
+                <div class="direita">
+                    <label for="cep" id="idcep">CEP</label>
+                    <input type="text" name="cep" id="idcep" ><br>
+
+                    <label for="rua" id="idrua">Rua</label>
+                    <input type="text" name="rua" id="idrua" ><br>
+
+                    <label for="numero" id="idnumero">Número</label>
+                    <input type="text" name="numero" id="idnumero" ><br>
+
+                    <input type="checkbox" name="semnumero" id="idsemnumero">
+                    <label for="semnumero" id="idsemnumero">Sem número</label><br>
+
+                    <label for="complemento" id="idcomplemento">Complemento</label>
+                    <input type="text" name="complemento" id="idcomplemento" ><br>
+
+                    <label for="referencia" id="idreferencia">Referência</label>
+                    <input type="text" name="referencia" id="idreferencia" ><br>
+
+                    <label for="bairro" id="idbairro">Bairro</label>
+                    <input type="text" name="bairro" id="idbairro"><br>
+
+                    <label for="cidade" id="idcidade">Cidade</label>
+                    <input type="text" name="cidade" id="idcidade"><br>
+
+                    <label for="estadobr" id="idestadobr">Estado</label>
+                    <input type="text" name="estadobr" id="idestadobr" ><br>
+                </div>
+            </div>
+            
+            <div id="botao">
+                <button type="submit" value="Enviar">Enviar</button>
+                <button type="reset" value="Limpar">Limpar</button>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

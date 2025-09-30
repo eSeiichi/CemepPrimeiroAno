@@ -1,0 +1,276 @@
+Lista 18
+
+**Projeto Detalhado de Criação de Banco de Dados no Access**
+
+Este projeto orienta a criação de um banco de dados simples no Microsoft Access, composto por duas tabelas relacionadas e dois formulários (um principal e um subformulário). Serão abordados os detalhes de cada campo das tabelas, incluindo tipos de dados, tamanhos e descrições, além de instruções específicas para vincular caixas de seleção e caixas de combinação aos campos correspondentes, considerando limitações de versões do Access que não permitem alterar diretamente o tipo de controle.
+
+---
+
+### **1. Estrutura das Tabelas**
+
+### **Tabela 1: Clientes**
+
+- **Descrição:** Armazena informações dos clientes.
+- **Campos:**
+    
+    
+    | Nome do Campo | Tipo de Dados | Tamanho (Se Aplicável) | Descrição |
+    | --- | --- | --- | --- |
+    | ID_Cliente | Numeração Automática | - | Chave Primária, gerada automaticamente pelo Access. |
+    | Nome | Texto Curto | 100 caracteres | Nome completo do cliente. |
+    | Email | Texto Curto | 100 caracteres | Endereço de e-mail do cliente. |
+    | Telefone | Texto Curto | 20 caracteres | Número de telefone do cliente. |
+    | Ativo | Sim/Não | - | Indica se o cliente está ativo (Caixa de Seleção). |
+
+### **Tabela 2: Pedidos**
+
+- **Descrição:** Armazena os pedidos realizados pelos clientes.
+- **Campos:**
+    
+    
+    | Nome do Campo | Tipo de Dados | Tamanho (Se Aplicável) | Descrição |
+    | --- | --- | --- | --- |
+    | ID_Pedido | Numeração Automática | - | Chave Primária, gerada automaticamente pelo Access. |
+    | ID_Cliente | Número | - | Chave Estrangeira que referencia Clientes.ID_Cliente. |
+    | Data_Pedido | Data/Hora | - | Data em que o pedido foi realizado. |
+    | Produto | Texto Curto | 100 caracteres | Nome do produto solicitado no pedido. |
+    | Quantidade | Número | - | Quantidade de produtos solicitados. |
+    | Status | Texto Curto | 20 caracteres | Status do pedido (Caixa de Combinação). |
+
+---
+
+### **2. Criação das Tabelas no Access**
+
+### **2.1. Criar a Tabela de Clientes**
+
+1. **Abrir o Access e Criar um Novo Banco de Dados:**
+    - Abra o Microsoft Access.
+    - Selecione **Arquivo > Novo** e escolha **Banco de Dados em Branco**.
+    - Nomeie o banco de dados, por exemplo, `DB_Empresa.accdb`, e clique em **Criar**.
+2. **Criar a Tabela de Clientes:**
+    - Na guia **Criar**, clique em **Tabela em Branco**.
+    - A tabela será aberta no **Modo de Exibição de Dados**.
+3. **Definir os Campos da Tabela:**
+    - **ID_Cliente:**
+        - Por padrão, o primeiro campo será `ID` com o tipo de dados **Numeração Automática**. Renomeie para `ID_Cliente`.
+        - **Chave Primária:** Selecione o campo `ID_Cliente` e clique em **Chave Primária** na guia **Ferramentas de Tabela**.
+    - **Nome:**
+        - Clique na coluna **Adicionar Novo Campo** e insira `Nome`.
+        - Defina o tipo de dados como **Texto Curto**.
+        - Defina o tamanho do campo para **100** caracteres na guia **Campo**.
+    - **Email:**
+        - Adicione o campo `Email` com o tipo de dados **Texto Curto**.
+        - Defina o tamanho para **100** caracteres.
+    - **Telefone:**
+        - Adicione o campo `Telefone` com o tipo de dados **Texto Curto**.
+        - Defina o tamanho para **20** caracteres.
+    - **Ativo:**
+        - Adicione o campo `Ativo` com o tipo de dados **Sim/Não**.
+        - Este campo representará uma caixa de seleção (checkbox).
+4. **Salvar a Tabela:**
+    - Clique em **Salvar** (ícone de disquete) ou pressione `Ctrl + S`.
+    - Nomeie a tabela como **Clientes** e confirme.
+
+### **2.2. Criar a Tabela de Pedidos**
+
+1. **Criar a Tabela de Pedidos:**
+    - Na guia **Criar**, clique em **Tabela em Branco**.
+    - A nova tabela será aberta no **Modo de Exibição de Dados**.
+2. **Definir os Campos da Tabela:**
+    - **ID_Pedido:**
+        - O primeiro campo será `ID` com o tipo de dados **Numeração Automática**. Renomeie para `ID_Pedido`.
+        - **Chave Primária:** Selecione o campo `ID_Pedido` e clique em **Chave Primária**.
+    - **ID_Cliente:**
+        - Adicione o campo `ID_Cliente` com o tipo de dados **Número**.
+        - **Descrição:** Este campo será uma chave estrangeira que relaciona cada pedido a um cliente específico.
+    - **Data_Pedido:**
+        - Adicione o campo `Data_Pedido` com o tipo de dados **Data/Hora**.
+    - **Produto:**
+        - Adicione o campo `Produto` com o tipo de dados **Texto Curto**.
+        - Defina o tamanho para **100** caracteres.
+    - **Quantidade:**
+        - Adicione o campo `Quantidade` com o tipo de dados **Número**.
+        - **Configuração Adicional:** Na guia **Campo**, você pode definir propriedades como o formato ou a precisão conforme necessário.
+    - **Status:**
+        - Adicione o campo `Status` com o tipo de dados **Texto Curto**.
+        - Defina o tamanho para **20** caracteres.
+3. **Salvar a Tabela:**
+    - Clique em **Salvar** e nomeie a tabela como **Pedidos**.
+4. **Estabelecer a Relação entre as Tabelas:**
+    - Vá para a guia **Ferramentas de Banco de Dados** e clique em **Relacionamentos**.
+    - Se solicitado, adicione as tabelas **Clientes** e **Pedidos**.
+    - **Criar a Relação:**
+        - Arraste o campo `ID_Cliente` da tabela **Clientes** para o campo `ID_Cliente` na tabela **Pedidos**.
+        - Na janela **Editar Relação**, marque a opção **Integridade Referencial** para garantir que cada pedido esteja associado a um cliente existente.
+        - Clique em **Criar** e depois em **Fechar**.
+
+---
+
+### **3. Criação dos Formulários**
+
+### **3.1. Formulário Principal: Clientes**
+
+1. **Criar o Formulário de Clientes:**
+    - Na guia **Criar**, clique em **Formulário em Branco**.
+    - O formulário será aberto no **Modo de Exibição de Layout**.
+2. **Adicionar Campos ao Formulário:**
+    - Na guia **Design**, clique em **Adicionar Campos Existentes** para abrir o **Painel de Campos**.
+    - Selecione a tabela **Clientes** no painel.
+    - Arraste os campos `Nome`, `Email`, `Telefone` e `Ativo` para o formulário.
+    - **Detalhes de Configuração:**
+        - **Nome, Email, Telefone:**
+            - Verifique se os controles estão configurados como **Caixas de Texto**.
+            - Ajuste os rótulos e tamanhos conforme necessário.
+        - **Ativo:**
+            - O campo `Ativo` será exibido como uma **Caixa de Seleção** automaticamente devido ao tipo de dados **Sim/Não**.
+3. **Configurar a Caixa de Seleção (Ativo):**
+    - **Vinculação Automática:**
+        - O controle da caixa de seleção já está vinculado ao campo `Ativo` da tabela **Clientes**.
+    - **Personalização:**
+        - Se desejar personalizar os valores exibidos (por exemplo, "Sim" e "Não"), selecione o controle, vá para a guia **Propriedades** (`F4`), e ajuste as propriedades **Valor Verdadeiro** e **Valor Falso** conforme necessário.
+4. **Adicionar Botões de Navegação e Operações:**
+    - Na guia **Design**, clique em **Botões** para iniciar o **Assistente de Botões**.
+    - **Adicionar Botões Básicos:**
+        - **Anterior:** Permite navegar para o registro anterior.
+        - **Próximo:** Permite navegar para o próximo registro.
+        - **Adicionar Novo Registro:** Abre um novo registro para inserção.
+        - **Salvar Registro:** Salva o registro atual.
+        - **Excluir Registro:** Exclui o registro selecionado.
+    - **Configuração via Assistente:**
+        - Para cada botão, selecione a ação apropriada no assistente e atribua um ícone representativo.
+        - Nomeie os botões de forma clara, por exemplo, "Anterior", "Próximo", "Adicionar", "Salvar", "Excluir".
+5. **Ajustar Layout e Estilo:**
+    - Organize os campos e botões de forma lógica e esteticamente agradável.
+    - Utilize as ferramentas de alinhamento e espaçamento na guia **Design**.
+6. **Salvar o Formulário:**
+    - Clique em **Salvar** e nomeie o formulário como **frmClientes**.
+
+### **3.2. Subformulário: Pedidos**
+
+1. **Criar o Subformulário de Pedidos:**
+    - Na guia **Criar**, clique em **Formulário em Branco**.
+    - O formulário será aberto no **Modo de Exibição de Layout**.
+2. **Adicionar Campos ao Subformulário:**
+    - Na guia **Design**, clique em **Adicionar Campos Existentes** para abrir o **Painel de Campos**.
+    - Selecione a tabela **Pedidos** no painel.
+    - Arraste os campos `Data_Pedido`, `Produto`, `Quantidade` e `Status` para o subformulário.
+    - **Detalhes de Configuração:**
+        - **Data_Pedido:**
+            - Configure o formato de data conforme necessário (por exemplo, `dd/mm/aaaa`).
+        - **Produto:**
+            - Verifique se o controle está configurado como **Caixa de Texto**.
+        - **Quantidade:**
+            - Configure o controle para aceitar apenas números, definindo a propriedade **Tipo de Entrada** para **Número**.
+        - **Status:**
+            - Este campo será configurado como uma **Caixa de Combinação**.
+3. **Adicionar uma Caixa de Combinação (Status):**
+    
+    Como sua versão do Access não permite alterar diretamente o tipo de controle, siga estas etapas alternativas para adicionar uma **Caixa de Combinação**:
+    
+    - **Remover o Controle Existente:**
+        - Clique com o botão direito do mouse sobre o campo `Status` que foi adicionado como **Caixa de Texto** e selecione **Excluir**.
+    - **Adicionar uma Nova Caixa de Combinação:**
+        - Na guia **Design**, clique em **Caixa de Combinação** no grupo **Controles**.
+        - Desenhe a caixa de combinação no local onde estava o campo `Status`.
+        - O **Assistente de Caixa de Combinação** será iniciado automaticamente.
+    - **Configurar a Caixa de Combinação:**
+        - **Passo 1:** Selecione **Eu quero que a caixa de combinação me ajude a escolher os valores a serem exibidos** e clique em **Próximo**.
+        - **Passo 2:** Escolha **Digite os valores que você quero que apareçam na caixa de combinação** e clique em **Próximo**.
+        - **Passo 3:** Insira os valores separados por ponto e vírgula: `Pendente;Enviado;Entregue;Cancelado` e clique em **Próximo**.
+        - **Passo 4:** Defina um rótulo para a caixa de combinação, por exemplo, "Status do Pedido", e clique em **Concluir**.
+    - **Vincular a Caixa de Combinação ao Campo `Status`:**
+        - Se a caixa de combinação não estiver automaticamente vinculada ao campo `Status`, abra a **Folha de Propriedades** (`F4`).
+        - Na aba **Dados**, localize a propriedade **Controle de Origem** e selecione `Status` na lista suspensa.
+4. **Adicionar Botões de Navegação e Operações:**
+    - Na guia **Design**, clique em **Botões** para iniciar o **Assistente de Botões**.
+    - **Adicionar Botões Básicos:**
+        - **Anterior:** Navega para o pedido anterior.
+        - **Próximo:** Navega para o próximo pedido.
+        - **Adicionar Novo Pedido:** Abre um novo registro de pedido.
+        - **Salvar Pedido:** Salva o pedido atual.
+        - **Excluir Pedido:** Exclui o pedido selecionado.
+    - **Configuração via Assistente:**
+        - Para cada botão, selecione a ação apropriada no assistente e atribua um ícone representativo.
+        - Nomeie os botões de forma clara, por exemplo, "Anterior", "Próximo", "Adicionar Pedido", "Salvar Pedido", "Excluir Pedido".
+5. **Ajustar Layout e Estilo:**
+    - Organize os campos e botões de forma lógica e esteticamente agradável.
+    - Utilize as ferramentas de alinhamento e espaçamento na guia **Design**.
+6. **Salvar o Subformulário:**
+    - Clique em **Salvar** e nomeie o formulário como **frmPedidos**.
+
+### **3.3. Inserir o Subformulário no Formulário Principal**
+
+1. **Abrir o Formulário de Clientes em Modo de Design:**
+    - Na guia **Navegação** (painel à esquerda), clique com o botão direito em **frmClientes** e selecione **Modo de Design**.
+2. **Adicionar o Subformulário:**
+    - Na guia **Design**, clique em **Subformulário/Subrelatório** no grupo **Controles**.
+    - Desenhe a área onde o subformulário será inserido no formulário principal.
+    - O **Assistente de Subformulário** será iniciado automaticamente.
+3. **Configurar o Assistente de Subformulário:**
+    - **Escolher Fonte de Dados:**
+        - Selecione **Usar um formulário existente** e escolha **frmPedidos**.
+    - **Definir Relacionamento:**
+        - O Access tentará identificar automaticamente a relação entre **Clientes** e **Pedidos** via `ID_Cliente`.
+        - Verifique se os campos de link estão corretos (`ID_Cliente` em **Clientes** e `ID_Cliente` em **Pedidos**).
+    - **Finalizar Assistente:**
+        - Clique em **Concluir** para inserir o subformulário.
+4. **Ajustar o Layout do Subformulário:**
+    - Redimensione e reposicione o subformulário conforme necessário para uma aparência organizada.
+    - Verifique se os botões de navegação e operações no subformulário estão visíveis e funcionais.
+5. **Salvar as Alterações no Formulário Principal:**
+    - Clique em **Salvar** para atualizar **frmClientes** com o subformulário inserido.
+
+---
+
+### **4. Testes do Banco de Dados**
+
+Após a criação das tabelas e formulários, é essencial realizar testes para garantir que todas as funcionalidades estão operando corretamente.
+
+### **4.1. Inserir Dados nos Clientes**
+
+1. **Abrir o Formulário de Clientes:**
+    - Na guia **Navegação**, abra **frmClientes**.
+2. **Adicionar um Novo Cliente:**
+    - Clique no botão **Adicionar Novo Registro**.
+    - Preencha os campos **Nome**, **Email** e **Telefone**.
+    - Marque ou desmarque a caixa de seleção **Ativo** conforme necessário.
+    - Clique no botão **Salvar Registro**.
+3. **Repetir para Vários Clientes:**
+    - Adicione múltiplos registros para testar a navegação e a integridade dos dados.
+
+### **4.2. Inserir Pedidos para um Cliente**
+
+1. **Selecionar um Cliente:**
+    - No formulário **frmClientes**, selecione um cliente existente usando os botões de navegação.
+2. **Adicionar um Pedido no Subformulário:**
+    - No subformulário **frmPedidos**, clique no botão **Adicionar Novo Pedido**.
+    - Preencha os campos **Data_Pedido**, **Produto**, **Quantidade** e selecione o **Status** na caixa de combinação.
+    - Clique no botão **Salvar Pedido**.
+3. **Repetir para Vários Pedidos:**
+    - Adicione múltiplos pedidos para diferentes clientes para testar a relação entre as tabelas.
+
+### **4.3. Verificar a Relação entre as Tabelas**
+
+1. **Navegar Entre Clientes:**
+    - Utilize os botões de navegação no formulário **frmClientes** para alternar entre diferentes clientes.
+2. **Verificar Pedidos Correspondentes:**
+    - Observe se os pedidos exibidos no subformulário correspondem ao cliente selecionado.
+    - Cada cliente deve visualizar apenas seus próprios pedidos.
+
+### **4.4. Testar Funcionalidades dos Botões**
+
+1. **Navegação:**
+    - Teste os botões **Anterior** e **Próximo** tanto no formulário principal quanto no subformulário para garantir que os registros são navegados corretamente.
+2. **Operações de Registro:**
+    - **Adicionar:** Verifique se novos registros podem ser adicionados sem erros.
+    - **Salvar:** Assegure-se de que os registros são salvos corretamente após inserção.
+    - **Excluir:** Teste a exclusão de registros e confirme se os dados são removidos conforme esperado.
+
+### **4.5. Verificar Campos Especiais**
+
+1. **Caixa de Seleção (Ativo):**
+    - No formulário **frmClientes**, marque e desmarque a caixa de seleção **Ativo** para verificar sua funcionalidade.
+    - Confirme que o status do cliente está refletido corretamente no banco de dados.
+2. **Caixa de Combinação (Status):**
+    - No subformulário **frmPedidos**, selecione diferentes opções na caixa de combinação **Status**.
+    - Assegure-se de que apenas os valores predefinidos ("Pendente", "Enviado", "Entregue", "Cancelado") estão disponíveis e são salvos corretamente.
